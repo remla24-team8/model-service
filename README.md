@@ -4,10 +4,20 @@ The model-service represents a wrapper service for the released ML model. It wil
 
 • Fetch the pre-trained ML model and setup the environment to make it queryable.(An excellent solution will find ways to avoid including the model in the image.)
 
-• Depends on the lib-ml through a package manager (e.g., PyPi) to pre-processing queries.
+• Depends on the lib-ml through a package manager (e.g., PyPi) to pre-processing queries. (DONE, but lib-ml does not yet have functionality)
 
-• Embed the ML model in a Flask webservice, so it can be queried via REST.
+• Embed the ML model in a Flask webservice, so it can be queried via REST. (Flask is set up)
 
 • A workflow is used to automatically release the library in the GitHub container registry.
 
 • The container is versioned automatically, e.g., by picking-up on the corresponding Git version tag.
+
+## Usage
+
+### Development setup
+
+Set up Poetry using Python 3.12 (i.e. use `poetry env use <python 3.12 executable here>`).
+
+Install dependencies and the project using `poetry install`
+
+Run the service using `poetry run flask --app model_service.app run`.
