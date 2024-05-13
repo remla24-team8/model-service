@@ -14,7 +14,7 @@ remla24-team8-lib-ml = "0.1.1"
 # If you want to import the newest version on Git, use the below
 # remla24-team8-lib-ml = { git = "https://github.com/remla24-team8/lib-ml.git", branch = "main" }
 flask = "^3.0.3"
-
+gdown = "^4.5.1"  # Assuming you want to use version 4.5.1; adjust the version as needed
 
 [build-system]
 requires = ["poetry-core"]
