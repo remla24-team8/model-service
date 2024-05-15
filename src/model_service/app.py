@@ -1,20 +1,34 @@
 from flask import Flask, request
-from model_service.spam import eggs
 import gdown
+import os
+from keras.models import load_model
+from lib_ml.process_data import DataProcessor
 
 app = Flask(__name__)
 
 
-def get_model():
-
-    gdrive_url = "https://drive.google.com/drive/folders/1io5_6ifcMol1M9jwZNw9BvRt7X9psTuc"
-    model_out = "models/model.h5"
-    mod = gdown.download(gdrive_url, model_out, fuzzy=True)
-    return mod
-
+class ModelService:
+    
+    def __init__(self):
+        self.model = self.get_model()
+        self.processor = DataProcessor()
 
 
-model = get_model()
+
+    @staticmethod    
+    def get_model():
+        if os.path.exists("models/model.h5"):
+            model = load_model("models/model.h5", compile=True)
+            return model
+        
+        gdrive_url = "https://drive.google.com/drive/folders/1io5_6ifcMol1M9jwZNw9BvRt7X9psTuc"
+        model_out = "models/model.h5"
+        model_name = gdown.download(gdrive_url, model_out, fuzzy=True)
+        model = load_model(model_name, compile=True)
+        return model
+
+
+
 
 # @app.route('/predict', methods =['POST '])
 # def predict():
