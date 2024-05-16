@@ -13,10 +13,7 @@ def home():
 def get_prediction():
     url = request.get_json()["url"]
     prediction = model.predict(url)
-    print({
-        "prediction": list(prediction)
-    })
 
-    return {
-        "prediction": list(prediction)
-    }
+    data = {"score": float(prediction[0][0])}
+    print(data)
+    return data
