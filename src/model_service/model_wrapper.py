@@ -14,9 +14,12 @@ class ModelService:
         """
         Make a prediction using the stored model and a given url as input
         """
-        data = [url]
+        if type(url) is list:
+            data = url
+        else:
+            data = [url]
         preprocess_url = self.processor.tokenize_pad_data(data)
-        prediction = self.model.predict(preprocess_url)
+        prediction = self.model.predict(preprocess_url, verbose=0)
         
         return prediction
 

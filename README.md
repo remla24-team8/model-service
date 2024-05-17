@@ -1,16 +1,9 @@
 # model-service
 
-The model-service represents a wrapper service for the released ML model. It will offer a REST API to exposes the model to other components and make it scalable.
+The model-service represents a wrapper service for the released ML model. It offers a REST API to exposes the model to other components and make it scalable.
 
-• Fetch the pre-trained ML model and setup the environment to make it queryable.(An excellent solution will find ways to avoid including the model in the image.)
+`http://host_ip/` offers a small introduction of the endpoint
 
-• Depends on the lib-ml through a package manager (e.g., PyPi) to pre-processing queries. (DONE, but lib-ml does not yet have functionality)
-
-• Embed the ML model in a Flask webservice, so it can be queried via REST. (Flask is set up)
-
-• A workflow is used to automatically release the library in the GitHub container registry.
-
-• The container is versioned automatically, e.g., by picking-up on the corresponding Git version tag.
 
 ## Usage
 
@@ -21,3 +14,18 @@ Set up Poetry using Python 3.12 (i.e. use `poetry env use <python 3.12 executabl
 Install dependencies and the project using `poetry install`
 
 Run the service using `poetry run flask --app model_service.app run`.
+
+### Production usage
+When the endpoint has been setup, make a POST request to `http://host_ip/predict`, following the data format:
+```
+{
+    "url": ['example1.com', 'example2.com']
+}
+```
+or
+```
+{
+    "url": 'example1.com'
+}
+```
+It will return a list of prediction scores.
