@@ -11,7 +11,7 @@ dependencies = [
     "remla24-team8-lib-ml == 0.1.4",
     "gdown == 4.5.1",
     "flask == 3.0.3",
-    "gunicorn == 21.2.0"
+    "gunicorn == 22.0.0"
 ]
 requires-python = ">=3.12"
 

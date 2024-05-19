@@ -11,6 +11,8 @@ The model-service represents a wrapper service for the released ML model. It off
 
 Install `uv`.
 
+If the dependencies are not up to date, run first `uv pip compile pyproject.toml -o requirements.txt`.
+
 Install dependencies and the project using `uv pip sync requirements.txt`.
 
 Enter the venv using `. .venv/bin/activate` (or similar for your platform/shell).
