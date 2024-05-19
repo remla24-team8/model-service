@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, Response
 from model_service.model_wrapper import ModelService
 
 app = Flask(__name__)
@@ -17,3 +17,7 @@ def get_prediction():
     data = {"score": prediction.tolist()}
     print(data)
     return data
+
+@app.route("/ready", methods=["GET"])
+def is_ready():
+    return Response(status=200)
