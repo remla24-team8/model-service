@@ -9,11 +9,15 @@ The model-service represents a wrapper service for the released ML model. It off
 
 ### Development setup
 
-Set up Poetry using Python 3.12 (i.e. use `poetry env use <python 3.12 executable here>`).
+Install `uv`.
 
-Install dependencies and the project using `poetry install`
+Install dependencies and the project using `uv pip sync requirements.txt`.
 
-Run the service using `poetry run flask --app model_service.app run`.
+Enter the venv using `. .venv/bin/activate` (or similar for your platform/shell).
+
+Go into the `src` directory.
+
+Run the service using `flask --app model_service.app run`.
 
 ### Production usage
 When the endpoint has been setup, make a POST request to `http://host_ip/predict`, following the data format:
