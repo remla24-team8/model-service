@@ -7,6 +7,7 @@ ENV PATH="${PATH}:/root/.local/bin"
 # We install specific version
 RUN pipx install uv==0.1.44
 WORKDIR /model-service
+RUN uv venv && . .venv/bin/activate
 # We copy only the requirements first, because they change less frequently
 COPY requirements.txt .
 RUN uv pip sync requirements.txt
