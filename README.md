@@ -2,9 +2,6 @@
 
 The model-service represents a wrapper service for the released ML model. It offers a REST API to exposes the model to other components and make it scalable.
 
-`http://host_ip/` offers a small introduction of the endpoint
-
-
 ## Usage
 
 ### Development setup
@@ -22,7 +19,13 @@ Go into the `src` directory.
 Run the service using `flask --app model_service.app run`.
 
 ### Production usage
-When the endpoint has been setup, make a POST request to `http://host_ip/predict`, following the data format:
+
+The model is built using GitHub Actions as an image, which can be found here: https://github.com/remla24-team8/model-service/pkgs/container/model-service. The port used is 5000.
+
+See the operation repo for setup in Docker Compose.
+
+### Making requests
+When the endpoint has been setup, make a POST request to `http://<host>/predict`, following the data format:
 ```
 {
     "url": ['example1.com', 'example2.com']
