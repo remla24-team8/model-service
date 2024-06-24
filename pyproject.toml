@@ -8,7 +8,7 @@ dependencies = [
     "scikit-learn ~= 1.4",
     "numpy ~= 1.26",
     "keras == 3.3.3",
-    "remla24-team8-lib-ml == 0.1.4",
+    "remla24-team8-lib-ml",
     "gdown == 4.5.1",
     "flask == 3.0.3",
     "gunicorn == 22.0.0"
