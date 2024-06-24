@@ -100,7 +100,7 @@ python-dateutil==2.9.0.post0
     # via pandas
 pytz==2024.1
     # via pandas
-remla24-team8-lib-ml==0.1.4
+remla24-team8-lib-ml==0.1.5
 requests==2.31.0
     # via
     #   gdown

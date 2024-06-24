@@ -1,5 +1,5 @@
-import gdown
 import os
+import gdown
 from keras.models import load_model
 from lib_ml.process_data import DataProcessor
 
