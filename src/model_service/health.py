@@ -12,4 +12,5 @@ try:
     if r.status_code != 200:
         sys.exit(1)
 except Exception as e:
+    print(e)
     sys.exit(1)
